@@ -7,13 +7,13 @@ CREATE DATABASE company;
 -- Use the company database
 USE company;
 
--- Define the 'department' table
+-- departments table
 CREATE TABLE IF NOT EXISTS department (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL
 );
 
--- Define the 'role' table
+-- roles table
 CREATE TABLE IF NOT EXISTS role (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS role (
     FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE SET NULL
 );
 
--- Define the 'employee' table
+-- employees table
 CREATE TABLE IF NOT EXISTS employee (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
