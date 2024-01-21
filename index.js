@@ -1,14 +1,5 @@
 const inquirer = require("inquirer");
-const mysql = require("mysql2");
-require('dotenv').config();
-
-const db = mysql.createConnection({
-    host: "localhost",
-    database: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-  });
-
+const db = require("./connection/db.js")
 const options = [
     "View All Employees",
     "Add Employee",
@@ -33,7 +24,7 @@ function init() {
             {
                 switch (answer.menu) {
                     case "View All Employees":
-                        
+                        queryTable("employee")
                         break;
                     case "Add Employee":
                     case "Update Employee Role":
