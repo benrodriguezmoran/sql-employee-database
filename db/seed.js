@@ -1,3 +1,4 @@
+const db = require("../connection/db.js")
 const query = `INSERT INTO department ( name ) 
 VALUES
      ('sales'),
@@ -29,4 +30,4 @@ VALUES
     ('Kevin',  'Malone',  5),
     ('Michael','Scott',   6);`
 
-module.exports = query;
+db.query(query);
